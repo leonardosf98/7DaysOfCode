@@ -5,28 +5,25 @@ Em seguida, o programa vai perguntar para você qual o valor que você deseja ch
 No fim, caso você não acerte nenhuma vez, ele vai imprimir qual era o número inicial.
 
 Depois que o programinha estiver funcionando, tente usar um número randômico em vez de um número pré-definido.*/
-let numeroAleatorio = Math.floor(Math.random() * 11);
+
+let numeroAleatorio = Math.floor(Math.random);
 let listaErro = [];
 
-function perguntaPrincipal() {
-  let escolhaNumero = prompt(
+function refazPergunta() {
+  let resposta = prompt(
     "Qual número você acha que eu escolhi? Digite um número entre 0 e 10"
   );
-  if (escolhaNumero == numeroAleatorio) {
-    alert("Parabéns, você acertou!");
-  } else {
-    escolhaNumero = prompt(
+  let tentativas = [];
+
+  while (resposta != numeroAleatorio && tentativas.length < 2) {
+    resposta = prompt(
       "Qual número você acha que eu escolhi? Digite um número entre 0 e 10"
     );
-    verificaNumero(escolhaNumero);
+    tentativas.push(1);
   }
+  if (resposta == numeroAleatorio) {
+    alert("Parabéns! Você acertou!");
+  } else
+    alert("Que pena, você não conseguiu, atualiza a página e tente novamente");
 }
-function verificaNumero(escolhaNumero) {
-  if (escolhaNumero == numeroAleatorio) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-perguntaPrincipal();
+refazPergunta();
