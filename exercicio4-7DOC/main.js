@@ -6,8 +6,9 @@ No fim, caso você não acerte nenhuma vez, ele vai imprimir qual era o número 
 
 Depois que o programinha estiver funcionando, tente usar um número randômico em vez de um número pré-definido.*/
 
-let numeroAleatorio = Math.floor(Math.random);
+let numeroAleatorio = Math.floor(Math.random() * 11);
 let listaErro = [];
+console.log(numeroAleatorio);
 
 function refazPergunta() {
   let resposta = prompt(
