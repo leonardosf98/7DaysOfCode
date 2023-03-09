@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Lista de Compras</title>
+</head>
+<script type="text/javascript">
+    let comida;
+    let doce = [];
+    let laticinios = [];
+    let frutas = [];
+    let congelados = [];
+    let hortifruti = [];
+
+    function inicio() {
+        const pergunta = prompt("Você quer adicionar um alimento na sua lista de compras?");
+
+        if (pergunta == "sim" || pergunta == "Sim") {
+            comida = prompt("Qual alimento deseja adicionar?");
+            grupoComida();
+        } else if (pergunta == "não" || pergunta == "Não") {
+            exibirListas();
+        } else {
+            alert("Digite sim ou não");
+        }
+    }
+    function grupoComida() {
+
+        let grupo = prompt("Em que grupo você quer colocar esse alimento? \nDoces \nLaticínios \nCongelados \nDoces \nHortifruti");
+        if (grupo == "doces" || grupo == "Doces") {
+            doce.push(comida);
+            inicio();
+        } else if (grupo == "Laticínios" || grupo == "laticínios") {
+            laticinios.push(comida);
+            inicio();
+        } else if (grupo == "frutas" || grupo == "Frutas") {
+            frutas.push(comida);
+            inicio();
+        } else if (grupo == "congelados" || grupo == "Congelados") {
+            congelados.push(comida);
+            inicio();
+        } else if (grupo == "hortifruti" || grupo == "Hortifruti") {
+            hortifruti.push(comida);
+            inicio();
+        } else {
+            alert("Digite um grupo válido. Verifique se escreveu igual ao exemplo!")
+            grupoComida();
+        }
+    }
+
+    function exibirListas() {
+        document.write("<h1>Lista de Compras</h1>");
+        document.write("<h2>Hortifruti: </h2>" + hortifruti);
+        document.write("<h2>Frutas: </h2>" + frutas);
+        document.write("<h2>Doces: </h2>" + doce);
+        document.write("<h2>Laticínios: </h2>" + congelados);
+        document.write("<h2>Congelados: </h2>" + hortifruti);
+
+    }
+
+    inicio();
+</script>
+
+<body>
+
+</body>
+
+</html>
